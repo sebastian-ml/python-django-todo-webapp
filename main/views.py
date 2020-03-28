@@ -1,5 +1,8 @@
 from django.shortcuts import render
+from django.views.generic import ListView
+from .models import Task
 
 
-def main(request):
-    return render(request, 'main/home.html')
+class TaskListView(ListView):
+    model = Task
+    template_name = 'main/home.html'
