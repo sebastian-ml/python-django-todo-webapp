@@ -22,12 +22,14 @@
                                         <li>
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                    <input class="checkbox" type="checkbox">
-                                                    {{ object.text }}
+                                                    {% if object.finished %}
+                                                        <span style="text-decoration: line-through;"><a href="{% url 'untick-page' object.id %}">{{ object.text }}</a></span>
+                                                    {% else %}
+                                                        <a href="{% url 'finish-page' object.id %}">{{ object.text }}</a>
+                                                    {% endif %}
                                                     <form action="/delete/{{ object.id }}"
                                                           method="post">{% csrf_token %}
-                                                        <input type="submit"
-                                                               value="Delete">
+                                                        <input type="submit" value="Delete">
                                                     </form>
                                                 </label>
                                             </div>
