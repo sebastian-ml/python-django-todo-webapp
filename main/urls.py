@@ -9,4 +9,5 @@ urlpatterns = [
     path('untick/<int:pk>', views.untick_finish, name='untick-page'),
     path('delete-all/', views.delete_all, name='delete-all-page'),
     path('delete-finished/', views.delete_completed_tasks, name='delete-finished-tasks'),
+    path('untick-all/', views.untick_all, name='untick-all'),
 ]

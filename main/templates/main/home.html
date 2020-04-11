@@ -25,6 +25,10 @@
                                     <input type="submit" class="add btn
                                     btn-danger font-weight-bold todo-list-add-btn" value="Delete completed">
                                 </a>
+                                <a href="{% url 'untick-all' %}">
+                                    <input type="submit" class="add btn
+                                    btn-danger font-weight-bold todo-list-add-btn" value="Untick all tasks">
+                                </a>
                             </div>
                             <div class="list-wrapper">
                                 <ul class="list-group">
@@ -33,7 +37,8 @@
                                             <div class="form-check">
                                                 {% if object.finished %}
                                                     <span style="text-decoration: line-through;"><a href="{% url 'untick-page' object.id %}">{{ object.text }}</a></span>
-                                                    {{ object.when_finished }}
+                                                    {{ object.when_finished_h }}
+                                                    {{ object.when_finished_date }}
                                                 {% else %}
                                                     <a href="{% url 'finish-page' object.id %}">{{ object.text }}</a>
                                                 {% endif %}
