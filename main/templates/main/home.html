@@ -16,7 +16,7 @@
                                     btn-primary font-weight-bold todo-list-add-btn" value="Add">
                                 </form>
                             </div>
-                            <div>
+                            <div class="mt-2">
                                 <a href="{% url 'delete-all-page' %}">
                                     <input type="submit" class="add btn
                                     btn-danger font-weight-bold todo-list-add-btn" value="Delete all">
@@ -30,7 +30,7 @@
                                     btn-danger font-weight-bold todo-list-add-btn" value="Untick all tasks">
                                 </a>
                             </div>
-                            <div class="list-wrapper">
+                            <div class="mt-2 list-wrapper">
                                 <ul class="list-group">
                                     {% for object in objects %}
                                         <li class="list-group-item">
@@ -42,7 +42,7 @@
                                                 {% else %}
                                                     <a href="{% url 'finish-page' object.id %}">{{ object.text }}</a>
                                                 {% endif %}
-                                                <form action="/delete/{{ object.id }}"
+                                                <form action="{% url 'delete-page' object.id  %}"
                                                       method="post">{% csrf_token %}
                                                     <button type="submit" class="btn btn-secondary">Delete</button>
                                                 </form>
