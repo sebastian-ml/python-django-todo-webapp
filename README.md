@@ -6,7 +6,7 @@
 ## Technology
 
 <ul>
-<li>Python<li>
+<li>Python</li>
 <li>Django</li>
 <li>HTML</li>
 <li>CSS</li>
